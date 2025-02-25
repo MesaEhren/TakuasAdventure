@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=6 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
 [ext_resource type="Script" path="res://Entities/Player/player_input.gd" id="3_08t6s"]
+[ext_resource type="Texture2D" uid="uid://bj5t74vfqf28n" path="res://icon.svg" id="4_h65xp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
 height = 20.0
@@ -22,3 +23,11 @@ actor = NodePath("..")
 [node name="Player Input" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("3_08t6s")
 actor = NodePath("..")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(1.13249e-06, 4.17233e-07)
+scale = Vector2(0.125, 0.140625)
+texture = ExtResource("4_h65xp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

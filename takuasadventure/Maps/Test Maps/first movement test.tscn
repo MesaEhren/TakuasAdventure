@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gicu7jbmd0bk"]
+
+[ext_resource type="Texture2D" uid="uid://bj5t74vfqf28n" path="res://icon.svg" id="1_rb6n5"]
+[ext_resource type="PackedScene" uid="uid://3yn6vr1s6iuh" path="res://Entities/Player/player_body.tscn" id="2_nidfw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.837821, 0.919835, 0.635731, 1)
+self_modulate = Color(1, 0, 1, 1)
+position = Vector2(544, 387)
+scale = Vector2(9.5, 6.79688)
+texture = ExtResource("1_rb6n5")
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_nidfw")]
+position = Vector2(219, 125)

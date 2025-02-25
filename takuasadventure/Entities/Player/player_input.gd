@@ -8,4 +8,5 @@ var direction: Vector2
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("move_west", "move_east", "move_north", "move_south")
 
+	#Send the direction info to the centralizd player_body script.
 	actor.direction = direction

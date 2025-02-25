@@ -19,6 +19,6 @@ var is_jumping: bool
 var is_carrying: bool
 
 
-var current_speed: int = 1 #TODO remove that 1
+var current_speed: int = 90 #TODO remove that 1
 
 var direction: Vector2
