@@ -1,19 +1,43 @@
-[gd_scene load_steps=6 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=10 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
 [ext_resource type="Script" path="res://Entities/Player/player_input.gd" id="3_08t6s"]
-[ext_resource type="Texture2D" uid="uid://bj5t74vfqf28n" path="res://icon.svg" id="4_h65xp"]
+[ext_resource type="Texture2D" uid="uid://c24bb4shndi0v" path="res://Assets/Sprites/Takua_Spritesheet.png" id="4_qndmo"]
+[ext_resource type="AnimationLibrary" uid="uid://5pkwhv88sbqc" path="res://Resources/Takua Animations.res" id="5_71dbq"]
+[ext_resource type="AnimationLibrary" uid="uid://b3l42wfnrwqp" path="res://Resources/takuaAnimations2.res.tres" id="6_syxv0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
-height = 20.0
+radius = 9.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_rxla1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [96]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58esb"]
+_data = {
+"RESET": SubResource("Animation_rxla1")
+}
 
 [node name="PlayerBody" type="CharacterBody2D"]
-collision_mask = 2046
+collision_mask = 510
 motion_mode = 1
 script = ExtResource("1_j1j4q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_rd0eh")
 
 [node name="Movement" type="Node" parent="." node_paths=PackedStringArray("actor")]
@@ -24,10 +48,18 @@ actor = NodePath("..")
 script = ExtResource("3_08t6s")
 actor = NodePath("..")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(1.13249e-06, 4.17233e-07)
-scale = Vector2(0.125, 0.140625)
-texture = ExtResource("4_h65xp")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="TakuaSprite" type="Sprite2D" parent="."]
+texture = ExtResource("4_qndmo")
+hframes = 16
+vframes = 32
+frame = 96
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_58esb"),
+"Takua Animations": ExtResource("5_71dbq"),
+"takuaAnimations2.res": ExtResource("6_syxv0")
+}
