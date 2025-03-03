@@ -4,7 +4,11 @@ extends CharacterBody2D
 #source-of-truth for the character.
 
 #TODO: add animation player, blendspace strings, etc, and create the update function
+var idle_blend_position: String = "parameters/Idle/blend_position"
+var walk_blend_position: String = "parameters/Walk/blend_position"
+var jump_blend_position: String = "parameters/Jump/blend_position"
 
+#basic movement stats for the player.
 @export var walk_speed: int = 90
 @export var acceleration: int = 10
 @export var friction: int = 8

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=33 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
@@ -6,10 +6,114 @@
 [ext_resource type="Texture2D" uid="uid://c24bb4shndi0v" path="res://Assets/Sprites/Takua_Spritesheet.png" id="4_qndmo"]
 [ext_resource type="AnimationLibrary" uid="uid://5pkwhv88sbqc" path="res://Resources/Takua Animations.res" id="5_71dbq"]
 [ext_resource type="AnimationLibrary" uid="uid://b3l42wfnrwqp" path="res://Resources/takuaAnimations2.res.tres" id="6_syxv0"]
+[ext_resource type="Script" path="res://Entities/Player/animation_manager.gd" id="7_lofc3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
 radius = 9.0
 height = 18.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6qdsw"]
+animation = &"takuaAnimations2.res/idle_south"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_81geg"]
+animation = &"takuaAnimations2.res/idle_southwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_grkbg"]
+animation = &"takuaAnimations2.res/idle_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n6s4l"]
+animation = &"takuaAnimations2.res/idle_northwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dkq6r"]
+animation = &"takuaAnimations2.res/idle_north"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6egnw"]
+animation = &"takuaAnimations2.res/idle_northeast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hqt8w"]
+animation = &"takuaAnimations2.res/idle_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xvmla"]
+animation = &"takuaAnimations2.res/idle_southeast"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_u8mau"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_6qdsw")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_81geg")
+blend_point_1/pos = Vector2(-1, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_grkbg")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_n6s4l")
+blend_point_3/pos = Vector2(-1, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_dkq6r")
+blend_point_4/pos = Vector2(0, -1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_6egnw")
+blend_point_5/pos = Vector2(1, -1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_hqt8w")
+blend_point_6/pos = Vector2(1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_xvmla")
+blend_point_7/pos = Vector2(1, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ixi33"]
+animation = &"takuaAnimations2.res/walk_north"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vkaj6"]
+animation = &"takuaAnimations2.res/walk_south"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfbkv"]
+animation = &"takuaAnimations2.res/walk_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4u54j"]
+animation = &"takuaAnimations2.res/walk_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wlsxo"]
+animation = &"takuaAnimations2.res/walk_southwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r1gd1"]
+animation = &"takuaAnimations2.res/walk_northwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o152f"]
+animation = &"takuaAnimations2.res/walk_northeast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yp8kk"]
+animation = &"takuaAnimations2.res/walk_southeast"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_1521r"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ixi33")
+blend_point_0/pos = Vector2(0, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_vkaj6")
+blend_point_1/pos = Vector2(0, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_pfbkv")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_4u54j")
+blend_point_3/pos = Vector2(-1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_wlsxo")
+blend_point_4/pos = Vector2(-1, 1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_r1gd1")
+blend_point_5/pos = Vector2(-1, -1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_o152f")
+blend_point_6/pos = Vector2(1, -1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_yp8kk")
+blend_point_7/pos = Vector2(1, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_44k1j"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_83y3c"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l50k0"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ooatf"]
+states/Start/position = Vector2(145, 134)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_u8mau")
+states/idle/position = Vector2(294, 84)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_1521r")
+states/walk/position = Vector2(619, 84)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_44k1j"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_83y3c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_l50k0")]
 
 [sub_resource type="Animation" id="Animation_rxla1"]
 length = 0.001
@@ -32,7 +136,7 @@ _data = {
 }
 
 [node name="PlayerBody" type="CharacterBody2D"]
-collision_mask = 510
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_j1j4q")
 
@@ -57,9 +161,20 @@ hframes = 16
 vframes = 32
 frame = 96
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_ooatf")
+anim_player = NodePath("../AnimationPlayer")
+parameters/idle/blend_position = Vector2(-0.671454, -0.628319)
+parameters/walk/blend_position = Vector2(0.00179529, -0.0176991)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_58esb"),
 "Takua Animations": ExtResource("5_71dbq"),
 "takuaAnimations2.res": ExtResource("6_syxv0")
 }
+
+[node name="AnimationManager" type="Node" parent="." node_paths=PackedStringArray("actor", "animation_tree")]
+script = ExtResource("7_lofc3")
+actor = NodePath("..")
+animation_tree = NodePath("../AnimationTree")
