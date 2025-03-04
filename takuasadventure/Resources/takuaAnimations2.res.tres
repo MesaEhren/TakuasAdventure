@@ -189,76 +189,17 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerInput")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [510, 414, 510]
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Jump")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"reset_jump_failsafe_timer"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_4uygi"]
@@ -287,58 +228,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerInput")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -371,58 +267,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.866667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerInput")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Jump")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -455,58 +306,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.866667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerInput")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Jump")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -539,58 +345,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerInput")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -623,58 +384,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerInput")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -707,58 +423,13 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -14), Vector2(0, -14), Vector2(0, 0)]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerInput")
+tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"values": [{
-"args": [],
-"method": &"set_to_jumping"
-}, {
-"args": [],
-"method": &"set_to_walking"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jump")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"jump_animation_ended"
-}]
-}
-tracks/4/type = "method"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerInput")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.966667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"set_jumping_false"
-}]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:collision_mask")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
@@ -950,29 +621,29 @@ tracks/0/keys = {
 
 [resource]
 _data = {
-"RESET": SubResource("Animation_yb34q"),
-"idle_east": SubResource("Animation_28fgk"),
-"idle_north": SubResource("Animation_tbkkw"),
-"idle_northeast": SubResource("Animation_6781w"),
-"idle_northwest": SubResource("Animation_ut5xs"),
-"idle_south": SubResource("Animation_ldxen"),
-"idle_southeast": SubResource("Animation_o0xqw"),
-"idle_southwest": SubResource("Animation_mmn5o"),
-"idle_west": SubResource("Animation_re76o"),
-"jump_east": SubResource("Animation_xkoeq"),
-"jump_north": SubResource("Animation_4uygi"),
-"jump_northeast": SubResource("Animation_bx5x5"),
-"jump_northwest": SubResource("Animation_u4u37"),
-"jump_south": SubResource("Animation_pg2p2"),
-"jump_southeast": SubResource("Animation_myips"),
-"jump_southwest": SubResource("Animation_pijfo"),
-"jump_west": SubResource("Animation_dh128"),
-"walk_east": SubResource("Animation_x6w4g"),
-"walk_north": SubResource("Animation_0tyfh"),
-"walk_northeast": SubResource("Animation_qpeoh"),
-"walk_northwest": SubResource("Animation_uyivn"),
-"walk_south": SubResource("Animation_00258"),
-"walk_southeast": SubResource("Animation_o6xgb"),
-"walk_southwest": SubResource("Animation_asiko"),
-"walk_west": SubResource("Animation_tc6mu")
+&"RESET": SubResource("Animation_yb34q"),
+&"idle_east": SubResource("Animation_28fgk"),
+&"idle_north": SubResource("Animation_tbkkw"),
+&"idle_northeast": SubResource("Animation_6781w"),
+&"idle_northwest": SubResource("Animation_ut5xs"),
+&"idle_south": SubResource("Animation_ldxen"),
+&"idle_southeast": SubResource("Animation_o0xqw"),
+&"idle_southwest": SubResource("Animation_mmn5o"),
+&"idle_west": SubResource("Animation_re76o"),
+&"jump_east": SubResource("Animation_xkoeq"),
+&"jump_north": SubResource("Animation_4uygi"),
+&"jump_northeast": SubResource("Animation_bx5x5"),
+&"jump_northwest": SubResource("Animation_u4u37"),
+&"jump_south": SubResource("Animation_pg2p2"),
+&"jump_southeast": SubResource("Animation_myips"),
+&"jump_southwest": SubResource("Animation_pijfo"),
+&"jump_west": SubResource("Animation_dh128"),
+&"walk_east": SubResource("Animation_x6w4g"),
+&"walk_north": SubResource("Animation_0tyfh"),
+&"walk_northeast": SubResource("Animation_qpeoh"),
+&"walk_northwest": SubResource("Animation_uyivn"),
+&"walk_south": SubResource("Animation_00258"),
+&"walk_southeast": SubResource("Animation_o6xgb"),
+&"walk_southwest": SubResource("Animation_asiko"),
+&"walk_west": SubResource("Animation_tc6mu")
 }
