@@ -10,15 +10,19 @@ extends Node
 @onready var walk_blend_position: String = "parameters/walk/blend_position"
 @onready var jump_blend_position: String = "parameters/Jump/blend_position"
 
+var current_animation: String = "idle"
+
 func _process(delta: float) -> void:
 	
 	if actor.direction.length() > 0:
-		animation_state.travel("walk")
+		current_animation = "walk"
 		update_blend_spaces() #only update blend spaces WHILE moving! Prevents direction reset on idle.
 		
 	else:
-		animation_state.travel("idle")
-	
+		current_animation = "idle"
+
+	animation_state.travel(current_animation) #update the animation tree.
+	actor.current_player_animation = current_animation #send the anim to the central body.
 
 
 func update_blend_spaces() -> void:

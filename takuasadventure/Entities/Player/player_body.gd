@@ -22,6 +22,7 @@ var is_moving: bool
 var is_jumping: bool
 var is_carrying: bool
 
+var current_player_animation: String = "idle"
 
 var current_speed: int = 90 #TODO remove that 1
 
