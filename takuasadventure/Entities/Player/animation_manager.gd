@@ -12,7 +12,7 @@ extends Node
 
 var current_animation: String = "idle"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if actor.direction.length() > 0:
 		current_animation = "walk"

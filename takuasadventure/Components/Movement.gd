@@ -9,7 +9,7 @@ func _ready():
 	actor.wall_min_slide_angle = min_slide_angle
 	actor.motion_mode = actor.MOTION_MODE_FLOATING
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if actor.direction.length() > 0:
 		actor.velocity = actor.velocity.move_toward(actor.direction * actor.current_speed, actor.acceleration)
 	else:

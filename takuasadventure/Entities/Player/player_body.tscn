@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=34 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" uid="uid://dc1qtf65gxja2" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" uid="uid://7crjwq1c14n1" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
@@ -7,6 +7,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://5pkwhv88sbqc" path="res://Resources/Takua Animations.res" id="5_71dbq"]
 [ext_resource type="AnimationLibrary" uid="uid://b3l42wfnrwqp" path="res://Resources/takuaAnimations2.res.tres" id="6_syxv0"]
 [ext_resource type="Script" uid="uid://cbbrmiwvi3xlk" path="res://Entities/Player/animation_manager.gd" id="7_lofc3"]
+[ext_resource type="Script" uid="uid://c0jk47pvqs1yy" path="res://Entities/Player/jump.gd" id="8_ba8hb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
 radius = 9.0
@@ -136,7 +137,7 @@ _data = {
 }
 
 [node name="PlayerBody" type="CharacterBody2D"]
-collision_mask = 510
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_j1j4q")
 
@@ -178,3 +179,8 @@ libraries = {
 script = ExtResource("7_lofc3")
 actor = NodePath("..")
 animation_tree = NodePath("../AnimationTree")
+
+[node name="Jump" type="Node" parent="."]
+script = ExtResource("8_ba8hb")
+
+[connection signal="jumped" from="Player Input" to="Jump" method="_on_player_input_jumped"]
