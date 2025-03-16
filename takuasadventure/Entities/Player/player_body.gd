@@ -7,6 +7,9 @@ extends CharacterBody2D
 var idle_blend_position: String = "parameters/Idle/blend_position"
 var walk_blend_position: String = "parameters/Walk/blend_position"
 var jump_blend_position: String = "parameters/Jump/blend_position"
+@onready var animation_tree = $AnimationTree
+@onready var playback = animation_tree["parameters/playback"]
+
 
 #basic movement stats for the player.
 @export var walk_speed: int = 90
@@ -21,9 +24,14 @@ var jump_blend_position: String = "parameters/Jump/blend_position"
 var is_moving: bool 
 var is_jumping: bool
 var is_carrying: bool
+var is_throwing: bool
+
 
 var current_player_animation: String = "idle"
 
 var current_speed: int = 90 #TODO remove that 1
 
 var direction: Vector2
+
+#func _process(float) -> void:
+	#print(playback.get_current_node())
