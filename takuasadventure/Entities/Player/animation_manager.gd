@@ -8,24 +8,40 @@ extends Node
 
 @onready var idle_blend_position: String = "parameters/idle/blend_position"
 @onready var walk_blend_position: String = "parameters/walk/blend_position"
-@onready var jump_blend_position: String = "parameters/Jump/blend_position"
+@onready var jump_blend_position: String = "parameters/jump/blend_position"
 
 var current_animation: String = "idle"
+var anim_from_state
 
 func _process(_delta: float) -> void:
+	anim_from_state = get_current_animation()
 	
-	if actor.direction.length() > 0:
-		current_animation = "walk"
-		update_blend_spaces() #only update blend spaces WHILE moving! Prevents direction reset on idle.
-		
-	else:
-		current_animation = "idle"
-
-	animation_state.travel(current_animation) #update the animation tree.
-	actor.current_player_animation = current_animation #send the anim to the central body.
+	match anim_from_state:
+		"idle":
+			pass
+		"walk":
+			if actor.direction.length() > 0:
+				update_blend_spaces()
+		"jump":
+			pass
 
 
 func update_blend_spaces() -> void:
 	animation_tree.set(idle_blend_position, actor.direction)
 	animation_tree.set(walk_blend_position, actor.direction)
-	#animation_tree.set(jump_blend_position, actor.direction)
+	animation_tree.set(jump_blend_position, actor.direction)
+
+func get_current_animation():
+	return animation_state.get_current_node()
+
+func _on_jump_jumped() -> void:
+	animation_state.travel("jump")
+	
+func _on_movement_idled() -> void:
+	animation_state.travel("idle")
+
+func _on_movement_walking() -> void:
+	animation_state.travel("walk")
+
+func _on_test_timer_delete_timeout() -> void:
+	print(anim_from_state)

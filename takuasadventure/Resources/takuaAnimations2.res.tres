@@ -11,7 +11,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, 0)]
 }
 tracks/1/type = "value"
@@ -199,7 +199,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_4uygi"]
@@ -238,7 +238,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_bx5x5"]
@@ -274,10 +274,10 @@ tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.966667),
+"times": PackedFloat32Array(0.0333333, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [478, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_u4u37"]
@@ -316,7 +316,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_pg2p2"]
@@ -355,7 +355,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_myips"]
@@ -394,7 +394,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_pijfo"]
@@ -433,7 +433,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_dh128"]
@@ -472,7 +472,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 414, 510]
+"values": [510, 338, 510]
 }
 
 [sub_resource type="Animation" id="Animation_x6w4g"]

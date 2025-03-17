@@ -1,9 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=61 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" uid="uid://dc1qtf65gxja2" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" uid="uid://7crjwq1c14n1" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
 [ext_resource type="Script" uid="uid://jf63c6860md4" path="res://Entities/Player/player_input.gd" id="3_08t6s"]
 [ext_resource type="Texture2D" uid="uid://c24bb4shndi0v" path="res://Assets/Sprites/Takua_Spritesheet.png" id="4_qndmo"]
+[ext_resource type="Texture2D" uid="uid://dg7jspy3enx5v" path="res://Assets/Sprites/player_shadow.png" id="4_xhfv4"]
 [ext_resource type="AnimationLibrary" uid="uid://5pkwhv88sbqc" path="res://Resources/Takua Animations.res" id="5_71dbq"]
 [ext_resource type="AnimationLibrary" uid="uid://b3l42wfnrwqp" path="res://Resources/takuaAnimations2.res.tres" id="6_syxv0"]
 [ext_resource type="Script" uid="uid://cbbrmiwvi3xlk" path="res://Entities/Player/animation_manager.gd" id="7_lofc3"]
@@ -64,7 +65,48 @@ blend_point_7/node = SubResource("AnimationNodeAnimation_xvmla")
 blend_point_7/pos = Vector2(1, 1)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ba8hb"]
+animation = &"takuaAnimations2.res/jump_south"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xhfv4"]
+animation = &"takuaAnimations2.res/jump_north"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hcuj6"]
+animation = &"takuaAnimations2.res/jump_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_awdgd"]
+animation = &"takuaAnimations2.res/jump_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q5418"]
+animation = &"takuaAnimations2.res/jump_southwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_17w4t"]
+animation = &"takuaAnimations2.res/jump_southeast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iqw2p"]
+animation = &"takuaAnimations2.res/jump_northeast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7806k"]
+animation = &"takuaAnimations2.res/jump_northwest"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_hcuj6"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_ba8hb")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_xhfv4")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_hcuj6")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_awdgd")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_q5418")
+blend_point_4/pos = Vector2(-1, 1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_17w4t")
+blend_point_5/pos = Vector2(1, 1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_iqw2p")
+blend_point_6/pos = Vector2(1, -1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_7806k")
+blend_point_7/pos = Vector2(-1, -1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_awdgd"]
 
@@ -123,12 +165,14 @@ switch_mode = 1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q5418"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_17w4t"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iqw2p"]
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7806k"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dwwql"]
+switch_mode = 2
+advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xeusc"]
 
@@ -139,8 +183,6 @@ switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x5h31"]
 switch_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aspgm"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rjjle"]
 
@@ -172,8 +214,8 @@ states/throw/node = SubResource("AnimationNodeBlendSpace2D_awdgd")
 states/throw/position = Vector2(305, -124)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1521r")
 states/walk/position = Vector2(757, 84)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_44k1j"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_83y3c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_l50k0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_q5418"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_17w4t"), "jump", "walk", SubResource("AnimationNodeStateMachineTransition_iqw2p"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_7806k"), "throw", "idle", SubResource("AnimationNodeStateMachineTransition_dwwql"), "idle", "carry_idle", SubResource("AnimationNodeStateMachineTransition_xeusc"), "carry_idle", "throw", SubResource("AnimationNodeStateMachineTransition_kcwdb"), "carry_idle", "carry_walk", SubResource("AnimationNodeStateMachineTransition_jkaxi"), "carry_walk", "carry_idle", SubResource("AnimationNodeStateMachineTransition_x5h31"), "carry_walk", "throw", SubResource("AnimationNodeStateMachineTransition_aspgm"), "idle", "Death", SubResource("AnimationNodeStateMachineTransition_rjjle"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_hq603"), "idle", "dialogue_or_menu", SubResource("AnimationNodeStateMachineTransition_2dirf"), "dialogue_or_menu", "idle", SubResource("AnimationNodeStateMachineTransition_ix87q")]
-graph_offset = Vector2(-191, -174)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_44k1j"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_83y3c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_l50k0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_q5418"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_17w4t"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_7806k"), "throw", "idle", SubResource("AnimationNodeStateMachineTransition_dwwql"), "idle", "carry_idle", SubResource("AnimationNodeStateMachineTransition_xeusc"), "carry_idle", "throw", SubResource("AnimationNodeStateMachineTransition_kcwdb"), "carry_idle", "carry_walk", SubResource("AnimationNodeStateMachineTransition_jkaxi"), "carry_walk", "carry_idle", SubResource("AnimationNodeStateMachineTransition_x5h31"), "idle", "Death", SubResource("AnimationNodeStateMachineTransition_rjjle"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_hq603"), "idle", "dialogue_or_menu", SubResource("AnimationNodeStateMachineTransition_2dirf"), "dialogue_or_menu", "idle", SubResource("AnimationNodeStateMachineTransition_ix87q")]
+graph_offset = Vector2(-66, -177)
 
 [sub_resource type="Animation" id="Animation_rxla1"]
 length = 0.001
@@ -189,6 +231,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [96]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:collision_mask")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [510]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_58esb"]
 _data = {
@@ -196,7 +250,7 @@ _data = {
 }
 
 [node name="PlayerBody" type="CharacterBody2D"]
-collision_mask = 0
+collision_mask = 510
 motion_mode = 1
 script = ExtResource("1_j1j4q")
 
@@ -208,12 +262,19 @@ shape = SubResource("CapsuleShape2D_rd0eh")
 script = ExtResource("1_5hh5d")
 actor = NodePath("..")
 
+[node name="TEST TIMER" type="Timer" parent="Movement"]
+wait_time = 0.5
+
 [node name="Player Input" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("3_08t6s")
 actor = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="PlayerShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("4_xhfv4")
 
 [node name="TakuaSprite" type="Sprite2D" parent="."]
 texture = ExtResource("4_qndmo")
@@ -229,7 +290,7 @@ parameters/carry_idle/blend_position = Vector2(0, 0)
 parameters/carry_walk/blend_position = Vector2(0, 0)
 parameters/dialogue_or_menu/blend_position = Vector2(0, 0)
 parameters/idle/blend_position = Vector2(-0.671454, -0.628319)
-parameters/jump/blend_position = Vector2(0, 0)
+parameters/jump/blend_position = Vector2(0.00706708, 0.963303)
 parameters/throw/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0.00179529, -0.0176991)
 
@@ -245,7 +306,13 @@ script = ExtResource("7_lofc3")
 actor = NodePath("..")
 animation_tree = NodePath("../AnimationTree")
 
-[node name="Jump" type="Node" parent="."]
+[node name="Jump" type="Node" parent="." node_paths=PackedStringArray("player", "animation_manager")]
 script = ExtResource("8_ba8hb")
+player = NodePath("..")
+animation_manager = NodePath("../AnimationManager")
 
+[connection signal="idled" from="Movement" to="AnimationManager" method="_on_movement_idled"]
+[connection signal="walking" from="Movement" to="AnimationManager" method="_on_movement_walking"]
+[connection signal="timeout" from="Movement/TEST TIMER" to="AnimationManager" method="_on_test_timer_delete_timeout"]
 [connection signal="jumped" from="Player Input" to="Jump" method="_on_player_input_jumped"]
+[connection signal="jumped" from="Jump" to="AnimationManager" method="_on_jump_jumped"]

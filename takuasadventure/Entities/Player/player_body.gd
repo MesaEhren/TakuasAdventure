@@ -3,12 +3,14 @@ extends CharacterBody2D
 #central component, serve as message bus, status holder, and ultimate 
 #source-of-truth for the character.
 
+
+
 #TODO: add animation player, blendspace strings, etc, and create the update function
 var idle_blend_position: String = "parameters/Idle/blend_position"
 var walk_blend_position: String = "parameters/Walk/blend_position"
 var jump_blend_position: String = "parameters/Jump/blend_position"
 @onready var animation_tree = $AnimationTree
-@onready var playback = animation_tree["parameters/playback"]
+@onready var animation_state = animation_tree["parameters/playback"]
 
 
 #basic movement stats for the player.
@@ -21,17 +23,11 @@ var jump_blend_position: String = "parameters/Jump/blend_position"
 @export var throw_strength: int = 1100
 
 
-var is_moving: bool 
-var is_jumping: bool
-var is_carrying: bool
-var is_throwing: bool
-
-
 var current_player_animation: String = "idle"
 
 var current_speed: int = 90 #TODO remove that 1
 
 var direction: Vector2
 
-#func _process(float) -> void:
-	#print(playback.get_current_node())
+func get_current_animation():
+	return animation_state.get_current_node()

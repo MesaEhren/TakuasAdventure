@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://gicu7jbmd0bk"]
+[gd_scene load_steps=4 format=3 uid="uid://gicu7jbmd0bk"]
 
 [ext_resource type="Texture2D" uid="uid://bj5t74vfqf28n" path="res://icon.svg" id="1_rb6n5"]
 [ext_resource type="PackedScene" uid="uid://3yn6vr1s6iuh" path="res://Entities/Player/player_body.tscn" id="2_nidfw"]
+[ext_resource type="PackedScene" uid="uid://c8kh8r0p15t5f" path="res://Entities/Object/test_obstacle.tscn" id="3_hjovt"]
 
 [node name="Node2D" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(0.837821, 0.919835, 0.635731, 1)
-self_modulate = Color(1, 0, 1, 1)
-position = Vector2(544, 387)
+modulate = Color(0.192356, 0.835964, 3.85046e-07, 1)
+z_index = -1
+position = Vector2(602, 427)
 scale = Vector2(9.5, 6.79688)
 texture = ExtResource("1_rb6n5")
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_nidfw")]
-position = Vector2(219, 125)
+position = Vector2(234, 153)
+
+[node name="Small Obstacle" parent="." instance=ExtResource("3_hjovt")]
+position = Vector2(265, 143)
