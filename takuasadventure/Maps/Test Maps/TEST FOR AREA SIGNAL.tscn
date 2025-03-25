@@ -93,7 +93,7 @@ shape = SubResource("CircleShape2D_cd2k1")
 metadata/_edit_lock_ = true
 
 [node name="CharBod" type="CharacterBody2D" parent="."]
-position = Vector2(84, 59)
+position = Vector2(122, 57)
 
 [node name="Icon" type="Sprite2D" parent="CharBod"]
 texture = ExtResource("1_5pga3")
@@ -117,7 +117,7 @@ shape = SubResource("RectangleShape2D_r7qem")
 metadata/_edit_lock_ = true
 
 [node name="CharBod3" type="CharacterBody2D" parent="."]
-position = Vector2(2, 125)
+position = Vector2(24, 181)
 
 [node name="Icon" type="Sprite2D" parent="CharBod3"]
 texture = ExtResource("1_5pga3")

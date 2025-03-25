@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://chnxji21h7k5r"]
+
+[ext_resource type="Texture2D" uid="uid://b14yqn37t6yoe" path="res://Assets/Sprites/Objects/Throwables/Throwable.png" id="1_4a82s"]
+[ext_resource type="Texture2D" uid="uid://dg7jspy3enx5v" path="res://Assets/Sprites/player_shadow.png" id="1_7mehw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mehw"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_7mehw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Throwable:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p230l"]
+_data = {
+&"RESET": SubResource("Animation_7mehw")
+}
+
+[sub_resource type="Animation" id="Animation_p230l"]
+resource_name = "throwable_falling"
+length = 0.85
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Throwable:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.733333, 0.766667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -20), Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3esps"]
+_data = {
+&"throwable_falling": SubResource("Animation_p230l")
+}
+
+[node name="ThrowableRock" type="CharacterBody2D" groups=["throwable"]]
+collision_layer = 16
+motion_mode = 1
+
+[node name="PlayerShadow" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_7mehw")
+
+[node name="Throwable" type="Sprite2D" parent="."]
+texture = ExtResource("1_4a82s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_7mehw")
+debug_color = Color(0.986731, 4.81308e-06, 0.553344, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_p230l"),
+&"ObjectAnimations": SubResource("AnimationLibrary_3esps")
+}

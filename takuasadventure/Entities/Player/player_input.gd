@@ -2,7 +2,7 @@ class_name PlayerInput
 extends Node
 
 signal jumped
-signal throw
+signal interact
 
 @export var actor: CharacterBody2D
 var direction: Vector2
@@ -17,4 +17,6 @@ func _physics_process(_delta: float) -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("jump"):
 		jumped.emit()
+	elif Input.is_action_just_pressed("interact"):
+		interact.emit()
 		

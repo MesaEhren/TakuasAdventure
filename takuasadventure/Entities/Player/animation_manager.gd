@@ -24,6 +24,9 @@ func _process(_delta: float) -> void:
 				update_blend_spaces()
 		"jump":
 			pass
+		"carry_walk":
+			if actor.direction.length() > 0:
+				update_blend_spaces()
 
 
 func update_blend_spaces() -> void:

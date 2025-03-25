@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=63 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" uid="uid://dc1qtf65gxja2" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" uid="uid://7crjwq1c14n1" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
@@ -9,6 +9,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://b3l42wfnrwqp" path="res://Resources/takuaAnimations2.res.tres" id="6_syxv0"]
 [ext_resource type="Script" uid="uid://cbbrmiwvi3xlk" path="res://Entities/Player/animation_manager.gd" id="7_lofc3"]
 [ext_resource type="Script" uid="uid://c0jk47pvqs1yy" path="res://Entities/Player/jump.gd" id="8_ba8hb"]
+[ext_resource type="Script" uid="uid://bs2pugrs0p5av" path="res://Entities/Player/carry.gd" id="10_hcuj6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
 radius = 9.0
@@ -215,7 +216,7 @@ states/throw/position = Vector2(305, -124)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1521r")
 states/walk/position = Vector2(757, 84)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_44k1j"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_83y3c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_l50k0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_q5418"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_17w4t"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_7806k"), "throw", "idle", SubResource("AnimationNodeStateMachineTransition_dwwql"), "idle", "carry_idle", SubResource("AnimationNodeStateMachineTransition_xeusc"), "carry_idle", "throw", SubResource("AnimationNodeStateMachineTransition_kcwdb"), "carry_idle", "carry_walk", SubResource("AnimationNodeStateMachineTransition_jkaxi"), "carry_walk", "carry_idle", SubResource("AnimationNodeStateMachineTransition_x5h31"), "idle", "Death", SubResource("AnimationNodeStateMachineTransition_rjjle"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_hq603"), "idle", "dialogue_or_menu", SubResource("AnimationNodeStateMachineTransition_2dirf"), "dialogue_or_menu", "idle", SubResource("AnimationNodeStateMachineTransition_ix87q")]
-graph_offset = Vector2(-66, -177)
+graph_offset = Vector2(-66, -131.667)
 
 [sub_resource type="Animation" id="Animation_rxla1"]
 length = 0.001
@@ -248,6 +249,9 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_rxla1")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xhfv4"]
+radius = 29.2746
 
 [node name="PlayerBody" type="CharacterBody2D"]
 collision_mask = 510
@@ -311,8 +315,27 @@ script = ExtResource("8_ba8hb")
 player = NodePath("..")
 animation_manager = NodePath("../AnimationManager")
 
+[node name="Carry" type="Node" parent="." node_paths=PackedStringArray("player_body")]
+script = ExtResource("10_hcuj6")
+player_body = NodePath("..")
+
+[node name="ItemCheckTick" type="Timer" parent="Carry"]
+wait_time = 0.1
+autostart = true
+
+[node name="ItemDetector" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemDetector"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_xhfv4")
+debug_color = Color(0.719144, 0.641996, 0.315245, 0.42)
+
 [connection signal="idled" from="Movement" to="AnimationManager" method="_on_movement_idled"]
 [connection signal="walking" from="Movement" to="AnimationManager" method="_on_movement_walking"]
 [connection signal="timeout" from="Movement/TEST TIMER" to="AnimationManager" method="_on_test_timer_delete_timeout"]
 [connection signal="jumped" from="Player Input" to="Jump" method="_on_player_input_jumped"]
 [connection signal="jumped" from="Jump" to="AnimationManager" method="_on_jump_jumped"]
+[connection signal="timeout" from="Carry/ItemCheckTick" to="Carry" method="_on_item_check_tick_timeout"]
+[connection signal="body_entered" from="ItemDetector" to="Carry" method="_on_item_detector_body_entered"]
+[connection signal="body_exited" from="ItemDetector" to="Carry" method="_on_item_detector_body_exited"]
