@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b14yqn37t6yoe" path="res://Assets/Sprites/Objects/Throwables/Throwable.png" id="1_4a82s"]
 [ext_resource type="Texture2D" uid="uid://dg7jspy3enx5v" path="res://Assets/Sprites/player_shadow.png" id="1_7mehw"]
-[ext_resource type="Texture2D" uid="uid://c24bb4shndi0v" path="res://Assets/Sprites/Takua_Spritesheet.png" id="3_p230l"]
+[ext_resource type="Script" uid="uid://dvw11fc107bef" path="res://Entities/Object/throwable_rock.gd" id="1_p230l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mehw"]
 radius = 7.0
@@ -28,6 +28,17 @@ tracks/1/path = NodePath("Throwable:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Throwable:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -60,9 +71,9 @@ tracks/1/path = NodePath("Throwable:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -85,8 +96,9 @@ _data = {
 collision_layer = 16
 collision_mask = 0
 motion_mode = 1
+script = ExtResource("1_p230l")
 
-[node name="PlayerShadow" type="Sprite2D" parent="."]
+[node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_7mehw")
@@ -104,11 +116,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_p230l"),
 &"ObjectAnimations": SubResource("AnimationLibrary_3esps")
 }
-
-[node name="TakuaSpritesheet" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -7)
-texture = ExtResource("3_p230l")
-hframes = 16
-vframes = 32
-frame = 96
