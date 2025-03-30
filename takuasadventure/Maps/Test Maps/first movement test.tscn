@@ -11,7 +11,7 @@ y_sort_enabled = true
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(0.192356, 0.835964, 3.85046e-07, 1)
 z_index = -1
-position = Vector2(602, 427)
+position = Vector2(627, 407)
 scale = Vector2(9.5, 6.79688)
 texture = ExtResource("1_rb6n5")
 
@@ -19,16 +19,16 @@ texture = ExtResource("1_rb6n5")
 position = Vector2(265, 143)
 
 [node name="ThrowableRock" parent="." instance=ExtResource("4_ejcgm")]
-position = Vector2(240, 163)
+position = Vector2(249, 166)
 
 [node name="ThrowableRock2" parent="." instance=ExtResource("4_ejcgm")]
-position = Vector2(184, 216)
+position = Vector2(215, 194)
 
 [node name="ThrowableRock3" parent="." instance=ExtResource("4_ejcgm")]
-position = Vector2(125, 163)
+position = Vector2(178, 164)
 
 [node name="ThrowableRock4" parent="." instance=ExtResource("4_ejcgm")]
-position = Vector2(184, 103)
+position = Vector2(214, 127)
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_nidfw")]
 position = Vector2(399, 166)
