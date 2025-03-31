@@ -23,6 +23,9 @@ func _on_item_detector_body_exited(body: Node2D) -> void:
 func _on_item_check_tick_timeout() -> void:
 	closest_item = find_closest_item()
 	#print("the closest item is:", closest_item)
+	#if closest_item != null:
+		#closest_item.targeted_for_carry()
+	GlobalVariables.targeted_object = closest_item
 
 func find_closest_item():
 	#this should never happen, but might as well add as an edge case.

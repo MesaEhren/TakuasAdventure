@@ -6,8 +6,14 @@ var friction = 1.5
 var can_go: bool = false
 
 func _ready() -> void:
-	pass
+	$Indicator.visible = false
 	
+
+func _process(delta: float) -> void:
+	if GlobalVariables.targeted_object == self:
+		targeted_for_carry()
+	else:
+		untargeted_for_carry()
 
 func _physics_process(delta: float) -> void:
 	if can_go:
@@ -24,3 +30,12 @@ func _input(_event: InputEvent) -> void:
 		direction.y = randi_range(-1, 1)
 		velocity = direction * speed
 		$AnimationPlayer.play("ObjectAnimations/throwable_falling")
+
+
+func targeted_for_carry():
+	$AnimationPlayer.play("ObjectAnimations/targeted")
+	$Indicator.visible = true
+	
+
+func untargeted_for_carry():
+	$Indicator.visible = false
