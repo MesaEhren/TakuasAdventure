@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://chnxji21h7k5r"]
+[gd_scene load_steps=21 format=3 uid="uid://chnxji21h7k5r"]
 
 [ext_resource type="Texture2D" uid="uid://b14yqn37t6yoe" path="res://Assets/Sprites/Objects/Throwables/Throwable.png" id="1_4a82s"]
 [ext_resource type="Texture2D" uid="uid://dg7jspy3enx5v" path="res://Assets/Sprites/player_shadow.png" id="1_7mehw"]
 [ext_resource type="Script" uid="uid://dvw11fc107bef" path="res://Entities/Object/throwable_rock.gd" id="1_p230l"]
 [ext_resource type="Texture2D" uid="uid://d363a2rqq6wls" path="res://Assets/UI/indicator.png" id="4_3esps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mehw"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_7mehw"]
 length = 0.001
@@ -64,58 +67,22 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Indicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p230l"]
 _data = {
 &"RESET": SubResource("Animation_7mehw")
-}
-
-[sub_resource type="Animation" id="Animation_p230l"]
-resource_name = "throwable_falling"
-length = 0.85
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("Throwable:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Throwable:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-25, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
-"times": PackedFloat32Array(0, 0.6, 0.833333)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath("CollisionShape2D:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CollisionShape2D:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-25, 0, 0, 0.033, 0, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
-"times": PackedFloat32Array(0, 0.6, 0.833333)
 }
 
 [sub_resource type="Animation" id="Animation_m2hk0"]
@@ -158,21 +125,200 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Indicator:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_p230l"]
+resource_name = "throwable_falling"
+length = 0.85
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Throwable:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Throwable:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-25, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 0.833333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("CollisionShape2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("CollisionShape2D:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-25, 0, 0, 0.033, 0, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
+"times": PackedFloat32Array(0, 0.6, 0.833333)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Indicator:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3esps"]
+resource_name = "idle"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Throwable:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Throwable:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Throwable:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape2D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Indicator:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3esps"]
 _data = {
+&"idle": SubResource("Animation_3esps"),
 &"targeted": SubResource("Animation_m2hk0"),
 &"throwable_falling": SubResource("Animation_p230l")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7mehw"]
-radius = 7.0
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m2hk0"]
+animation = &"ObjectAnimations/idle"
 
-[node name="ThrowableRock" type="CharacterBody2D" groups=["throwable"]]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fqyiq"]
+animation = &"ObjectAnimations/targeted"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3s5vq"]
+animation = &"ObjectAnimations/throwable_falling"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2t2yt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4jklx"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f4qpo"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2qk6o"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3esps"]
+switch_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_p8jbu"]
+states/End/position = Vector2(1033, 110)
+states/Start/position = Vector2(47, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_m2hk0")
+states/idle/position = Vector2(198, 100)
+states/targeted/node = SubResource("AnimationNodeAnimation_fqyiq")
+states/targeted/position = Vector2(522, 180)
+states/throwable_falling/node = SubResource("AnimationNodeAnimation_3s5vq")
+states/throwable_falling/position = Vector2(792, 64)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_2t2yt"), "idle", "targeted", SubResource("AnimationNodeStateMachineTransition_4jklx"), "targeted", "throwable_falling", SubResource("AnimationNodeStateMachineTransition_f4qpo"), "throwable_falling", "idle", SubResource("AnimationNodeStateMachineTransition_2qk6o"), "targeted", "idle", SubResource("AnimationNodeStateMachineTransition_3esps")]
+
+[node name="ThrowableRock" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree") groups=["throwable"]]
 collision_layer = 16
-collision_mask = 0
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_p230l")
+animation_tree = NodePath("AnimationTree")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
@@ -182,17 +328,26 @@ texture = ExtResource("1_7mehw")
 [node name="Throwable" type="Sprite2D" parent="."]
 texture = ExtResource("1_4a82s")
 
+[node name="Indicator" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_3esps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7mehw")
+debug_color = Color(0.986731, 4.81308e-06, 0.553344, 0.42)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_p230l"),
 &"ObjectAnimations": SubResource("AnimationLibrary_3esps")
 }
 
-[node name="Indicator" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1, -11.958)
-texture = ExtResource("4_3esps")
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_p8jbu")
+anim_player = NodePath("../AnimationPlayer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_7mehw")
-debug_color = Color(0.986731, 4.81308e-06, 0.553344, 0.42)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

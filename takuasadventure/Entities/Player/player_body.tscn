@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=64 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" uid="uid://dc1qtf65gxja2" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" uid="uid://7crjwq1c14n1" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cbbrmiwvi3xlk" path="res://Entities/Player/animation_manager.gd" id="7_lofc3"]
 [ext_resource type="Script" uid="uid://c0jk47pvqs1yy" path="res://Entities/Player/jump.gd" id="8_ba8hb"]
 [ext_resource type="Script" uid="uid://bs2pugrs0p5av" path="res://Entities/Player/carry.gd" id="10_hcuj6"]
+[ext_resource type="Script" uid="uid://o3f8e4055x62" path="res://Entities/Player/item_detector.gd" id="11_awdgd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
 radius = 9.0
@@ -251,7 +252,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhfv4"]
-radius = 21.0238
+radius = 23.0217
 
 [node name="PlayerBody" type="CharacterBody2D"]
 collision_mask = 510
@@ -320,20 +321,22 @@ script = ExtResource("10_hcuj6")
 player_body = NodePath("..")
 
 [node name="ItemCheckTick" type="Timer" parent="Carry"]
-wait_time = 0.1
+wait_time = 0.05
 autostart = true
 
-[node name="ItemDetector" type="Area2D" parent="."]
+[node name="ItemDetector" type="Area2D" parent="." node_paths=PackedStringArray("player")]
 collision_mask = 16
+script = ExtResource("11_awdgd")
+player = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemDetector"]
-position = Vector2(0, 2)
+position = Vector2(7, 0)
 shape = SubResource("CircleShape2D_xhfv4")
 debug_color = Color(0.719144, 0.641996, 0.315245, 0.42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ItemDetector"]
-polygon = PackedVector2Array(-8, 18, 0, 18, 47, 0, 0, -15, -8, -15, -5, 0)
-disabled = true
+visible = false
+polygon = PackedVector2Array(-15, 16, 0, 24, 30, 12, 34, 1, 30, -9, 0, -23, -15, -14, -11, 0)
 
 [connection signal="idled" from="Movement" to="AnimationManager" method="_on_movement_idled"]
 [connection signal="walking" from="Movement" to="AnimationManager" method="_on_movement_walking"]
