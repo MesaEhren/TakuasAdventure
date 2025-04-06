@@ -9,6 +9,12 @@ signal carried
 var items_nearby = []
 var closest_item = null
 
+func _on_player_input_interact() -> void:
+	if GlobalVariables.targeted_object != null:
+		if player_body.get_current_animation() == "idle" \
+		or player_body.get_current_animation() == "walk":
+			GlobalVariables.targeted_object.carried(player_body.global_position)
+
 func _on_item_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("throwable"):
 		if items_nearby.has(body) == false: 
