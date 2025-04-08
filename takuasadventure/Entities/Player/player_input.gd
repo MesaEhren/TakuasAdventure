@@ -13,9 +13,12 @@ func _physics_process(_delta: float) -> void:
 
 	#Send the direction info to the centralizd player_body script.
 	actor.direction = direction
+	
+	if direction.length() > 0:
+		actor.aim_direction = direction
 
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump_cancel"):
 		jumped.emit()
 	elif Input.is_action_just_pressed("interact"):
 		interact.emit()

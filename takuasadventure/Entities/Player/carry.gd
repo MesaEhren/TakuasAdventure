@@ -10,10 +10,18 @@ var items_nearby = []
 var closest_item = null
 
 func _on_player_input_interact() -> void:
-	if GlobalVariables.targeted_object != null:
+	if GlobalVariables.carried_object != null:
+		GlobalVariables.carried_object.throw(player_body.aim_direction)
+	
+	elif GlobalVariables.targeted_object != null:
 		if player_body.get_current_animation() == "idle" \
 		or player_body.get_current_animation() == "walk":
-			GlobalVariables.targeted_object.carried(player_body.global_position)
+			GlobalVariables.targeted_object.carried(player_body)
+	
+
+func _on_player_input_jumped() -> void:
+	if GlobalVariables.carried_object != null:
+		GlobalVariables.carried_object.drop()
 
 func _on_item_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("throwable"):
@@ -30,7 +38,7 @@ func _on_item_check_tick_timeout() -> void:
 	closest_item = find_closest_item()
 	#print("the closest item is:", closest_item)
 	#if closest_item != null:
-		#closest_item.targeted_for_carry()
+		#closest_item.targeted_fosr_carry()
 	GlobalVariables.targeted_object = closest_item
 
 func find_closest_item():

@@ -4,56 +4,49 @@ extends CharacterBody2D
 @onready var animation_state = animation_tree.get("parameters/playback")
 
 var direction: Vector2
-var speed = 125
-var friction = 1.75
+var speed = 175
+var friction = 2.15
 var can_go: bool = false
 var is_carried: bool = false
+var world_parent
 
 func _ready() -> void:
 	$Indicator.visible = false
+	world_parent = get_parent()
 
 
 func _physics_process(delta: float) -> void:
-	#if can_go:
-		#velocity = velocity.move_toward(Vector2.ZERO, friction)
-	#
-		if get_current_animation() == "carried":
-			self.global_position = GlobalVariables.player_position_reference
-	
+	if get_current_animation() == "throw":
+		velocity = velocity.move_toward(Vector2.ZERO, friction)
+
 		move_and_slide()
 		
 	
 
-func carried(player_position):
-	animation_state.travel("carried")
+func carried(player):
+	if GlobalVariables.carried_object != null:
+		return
+	if get_current_animation() != "throw" and \
+	get_current_animation() != "drop":
+		animation_state.travel("carried")
+		reparent(player, false)
+		self.position = Vector2(0, -1)
+		GlobalVariables.carried_object = self
 
 func throw(player_aim_direction: Vector2):
-	animation_state.travel("throwable_falling")
-	velocity = player_aim_direction * speed
+	animation_state.travel("throw")
+	reparent(world_parent, true)
+	velocity = player_aim_direction.normalized() * speed
+	GlobalVariables.carried_object = null
 
-#func _input(_event: InputEvent) -> void:
-	#if Input.is_key_pressed(KEY_X):
-		#can_go = true
-		#
-		##direction.x = randi_range(-1, 1)
-		##direction.y = randi_range(-1, 1)
-		#direction.x = 0
-		#direction.y = -1
-		#direction = direction.normalized()
-		#velocity = direction * speed
-		#animation_state.travel("throwable_falling")
-#
-	#if Input.is_key_pressed(KEY_Z):
-		#can_go = true
-		#
-		##direction.x = randi_range(-1, 1)
-		##direction.y = randi_range(-1, 1)
-		#direction.x = 0
-		#direction.y = 1
-		#direction = direction.normalized()
-		#velocity = direction * speed
-		#animation_state.travel("throwable_falling")
+func drop():
+	animation_state.travel("drop")
+	reparent(world_parent, true)
+	GlobalVariables.carried_object = null
 
+	#direction = direction.normalized()
+	#velocity = direction * speed
+	#animation_state.travel("throwable_falling")
 
 func _on_timer_timeout() -> void:
 	if get_current_animation() != "carried" and \

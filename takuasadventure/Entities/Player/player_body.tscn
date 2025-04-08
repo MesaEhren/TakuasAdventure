@@ -217,7 +217,7 @@ states/throw/position = Vector2(305, -124)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1521r")
 states/walk/position = Vector2(757, 84)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_44k1j"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_83y3c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_l50k0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_q5418"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_17w4t"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_7806k"), "throw", "idle", SubResource("AnimationNodeStateMachineTransition_dwwql"), "idle", "carry_idle", SubResource("AnimationNodeStateMachineTransition_xeusc"), "carry_idle", "throw", SubResource("AnimationNodeStateMachineTransition_kcwdb"), "carry_idle", "carry_walk", SubResource("AnimationNodeStateMachineTransition_jkaxi"), "carry_walk", "carry_idle", SubResource("AnimationNodeStateMachineTransition_x5h31"), "idle", "Death", SubResource("AnimationNodeStateMachineTransition_rjjle"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_hq603"), "idle", "dialogue_or_menu", SubResource("AnimationNodeStateMachineTransition_2dirf"), "dialogue_or_menu", "idle", SubResource("AnimationNodeStateMachineTransition_ix87q")]
-graph_offset = Vector2(-66, -127.889)
+graph_offset = Vector2(-70, -168.889)
 
 [sub_resource type="Animation" id="Animation_rxla1"]
 length = 0.001
@@ -339,6 +339,7 @@ debug_color = Color(0.719144, 0.641996, 0.315245, 0.42)
 [connection signal="timeout" from="Movement/TEST TIMER" to="AnimationManager" method="_on_test_timer_delete_timeout"]
 [connection signal="interact" from="Player Input" to="Carry" method="_on_player_input_interact"]
 [connection signal="jumped" from="Player Input" to="Jump" method="_on_player_input_jumped"]
+[connection signal="jumped" from="Player Input" to="Carry" method="_on_player_input_jumped"]
 [connection signal="jumped" from="Jump" to="AnimationManager" method="_on_jump_jumped"]
 [connection signal="timeout" from="Carry/ItemCheckTick" to="Carry" method="_on_item_check_tick_timeout"]
 [connection signal="body_entered" from="ItemDetector" to="Carry" method="_on_item_detector_body_entered"]

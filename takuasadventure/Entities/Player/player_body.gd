@@ -22,6 +22,7 @@ var jump_blend_position: String = "parameters/Jump/blend_position"
 var current_player_animation: String = "idle"
 var current_speed: int = 90 #TODO remove that 1
 var direction: Vector2
+var aim_direction: Vector2
 
 func _physics_process(delta: float) -> void:
 	GlobalVariables.player_position_reference = self.global_position
