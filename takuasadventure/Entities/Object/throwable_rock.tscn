@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://chnxji21h7k5r"]
+[gd_scene load_steps=30 format=3 uid="uid://chnxji21h7k5r"]
 
 [ext_resource type="Texture2D" uid="uid://b14yqn37t6yoe" path="res://Assets/Sprites/Objects/Throwables/Throwable.png" id="1_4a82s"]
 [ext_resource type="Texture2D" uid="uid://dg7jspy3enx5v" path="res://Assets/Sprites/player_shadow.png" id="1_7mehw"]
 [ext_resource type="Script" uid="uid://dvw11fc107bef" path="res://Entities/Object/throwable_rock.gd" id="1_p230l"]
 [ext_resource type="Texture2D" uid="uid://d363a2rqq6wls" path="res://Assets/UI/indicator.png" id="4_3esps"]
+[ext_resource type="Script" uid="uid://dimvl75f0xh2s" path="res://Entities/Object/rock_hitbox.gd" id="5_m2hk0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7mehw"]
 radius = 4.0
@@ -102,6 +103,18 @@ tracks/7/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Hitbox:monitoring")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p230l"]
@@ -482,6 +495,18 @@ tracks/6/keys = {
 "points": PackedFloat32Array(-25, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 0.833333)
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Hitbox:monitoring")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3esps"]
 _data = {
@@ -585,10 +610,14 @@ anim_player = NodePath("../AnimationPlayer")
 wait_time = 0.05
 autostart = true
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("throwable_object")]
+monitoring = false
+script = ExtResource("5_m2hk0")
+throwable_object = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_3esps")
 debug_color = Color(0.988235, 0, 0, 0.419608)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

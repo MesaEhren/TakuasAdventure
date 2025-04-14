@@ -58,3 +58,8 @@ func _on_timer_timeout() -> void:
 			
 func get_current_animation():
 	return animation_state.get_current_node()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("hurtbox"):
+		area.get_parent().on_hurtbox_hit()
