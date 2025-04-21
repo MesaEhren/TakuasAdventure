@@ -6,8 +6,6 @@ extends CharacterBody2D
 var direction: Vector2
 var speed = 175
 var friction = 2.15
-var can_go: bool = false
-var is_carried: bool = false
 var world_parent
 
 func _ready() -> void:
@@ -15,13 +13,11 @@ func _ready() -> void:
 	world_parent = get_parent()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_current_animation() == "throw":
 		velocity = velocity.move_toward(Vector2.ZERO, friction)
-
-		move_and_slide()
 		
-	
+		move_and_slide()
 
 func carried(player):
 	if GlobalVariables.carried_object != null:

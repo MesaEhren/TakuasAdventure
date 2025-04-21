@@ -1,10 +1,6 @@
 class_name Carry
 extends Node
 
-signal carried
-
-
-
 @export var player_body: CharacterBody2D
 var items_nearby = []
 var closest_item = null
