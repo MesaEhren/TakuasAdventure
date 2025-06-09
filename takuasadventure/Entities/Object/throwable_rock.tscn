@@ -217,7 +217,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-22, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
+"points": PackedFloat32Array(-18, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 0.833333)
 }
 tracks/2/type = "value"
@@ -376,7 +376,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-25, 0, 0, 0.033, 0, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
+"points": PackedFloat32Array(-18, 0, 0, 0.033, 0, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 0.833333)
 }
 tracks/4/type = "value"
@@ -436,7 +436,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-25, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
+"points": PackedFloat32Array(-18, 0, 0, 0.0333333, 1, 0, -0.2, -40, 0, 0, 0, -0.133, -11, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 0.833333)
 }
 tracks/2/type = "bezier"
@@ -492,7 +492,7 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-25, 0, 0, 0.0333333, 1, 0, -0.2, -50, 0, 0, 0, -0.133, -11, 0, 0),
+"points": PackedFloat32Array(-18, 0, 0, 0.0333333, 1, 0, -0.2, -40, 0, 0, 0, -0.133, -11, 0, 0),
 "times": PackedFloat32Array(0, 0.6, 0.833333)
 }
 tracks/7/type = "value"
@@ -589,6 +589,7 @@ texture = ExtResource("1_4a82s")
 
 [node name="Indicator" type="Sprite2D" parent="."]
 visible = false
+position = Vector2(1, -11.958)
 texture = ExtResource("4_3esps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

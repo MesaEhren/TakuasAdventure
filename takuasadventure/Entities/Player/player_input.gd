@@ -15,7 +15,8 @@ func _physics_process(_delta: float) -> void:
 	actor.direction = direction
 	
 	if direction.length() > 0:
-		actor.aim_direction = direction
+		if actor.get_current_animation() != "throw":
+			actor.aim_direction = direction
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("jump_cancel"):

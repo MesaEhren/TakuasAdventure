@@ -10,6 +10,8 @@ extends Node
 @onready var walk_blend_position: String = "parameters/walk/blend_position"
 @onready var jump_blend_position: String = "parameters/jump/blend_position"
 @onready var carry_idle_blend_position: String = "parameters/carry_idle/blend_position"
+@onready var carry_walk_blend_position: String = "parameters/carry_walk/blend_position"
+@onready var throw_blend_position: String = "parameters/throw/blend_position"
 
 
 var current_animation: String = "idle"
@@ -29,6 +31,13 @@ func _process(_delta: float) -> void:
 		"carry_walk":
 			if actor.direction.length() > 0:
 				update_blend_spaces()
+			
+			if GlobalVariables.carried_object == null:
+				animation_state.travel("idle")
+				
+		"carry_idle":
+			if GlobalVariables.carried_object == null:
+				animation_state.travel("idle")
 
 
 func update_blend_spaces() -> void:
@@ -36,6 +45,8 @@ func update_blend_spaces() -> void:
 	animation_tree.set(walk_blend_position, actor.direction)
 	animation_tree.set(jump_blend_position, actor.direction)
 	animation_tree.set(carry_idle_blend_position, actor.direction)
+	animation_tree.set(carry_walk_blend_position, actor.direction)
+	animation_tree.set(throw_blend_position, actor.direction)
 
 func get_current_animation():
 	return animation_state.get_current_node()
@@ -52,6 +63,17 @@ func _on_movement_walking() -> void:
 func _on_carry_carried() -> void:
 	animation_state.travel("carry_idle")
 
+func _on_movement_carry_walking() -> void:
+	animation_state.travel("carry_walk")
+
+func _on_movement_carry_idled() -> void:
+	animation_state.travel("carry_idle")
+	
+func _on_carry_thrown() -> void:
+	animation_state.travel("throw")
+
+func _on_carry_dropped_to_idle() -> void:
+	animation_state.travel("idle")
 
 func _on_test_timer_delete_timeout() -> void:
 	print(anim_from_state)

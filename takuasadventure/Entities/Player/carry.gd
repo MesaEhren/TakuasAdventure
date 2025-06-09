@@ -2,14 +2,20 @@ class_name Carry
 extends Node
 
 signal carried
+signal thrown
+signal dropped_to_idle
 
 @export var player_body: CharacterBody2D
 var items_nearby = []
 var closest_item = null
 
+func _process(delta: float) -> void:
+	print(items_nearby)
+
 func _on_player_input_interact() -> void:
 	if GlobalVariables.carried_object != null:
-		GlobalVariables.carried_object.throw(player_body.aim_direction)
+		thrown.emit()
+		#GlobalVariables.carried_object.throw(player_body.aim_direction)
 	
 	elif GlobalVariables.targeted_object != null:
 		if player_body.get_current_animation() == "idle" \
@@ -18,9 +24,13 @@ func _on_player_input_interact() -> void:
 			carried.emit()
 	
 
+func throw_from_animation(): #specifically to be called from any of the throw animations.
+	GlobalVariables.carried_object.throw(player_body.aim_direction)
+
 func _on_player_input_jumped() -> void:
-	if GlobalVariables.carried_object != null:
+	if GlobalVariables.carried_object != null and player_body.get_current_animation() != "throw":
 		GlobalVariables.carried_object.drop()
+		dropped_to_idle.emit()
 
 func _on_item_detector_body_entered(body: Node2D) -> void:
 	if body.is_in_group("throwable"):
