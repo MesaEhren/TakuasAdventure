@@ -1,4 +1,4 @@
-[gd_resource type="AnimationLibrary" load_steps=26 format=3 uid="uid://b3l42wfnrwqp"]
+[gd_resource type="AnimationLibrary" load_steps=34 format=3 uid="uid://b3l42wfnrwqp"]
 
 [sub_resource type="Animation" id="Animation_yb34q"]
 length = 0.001
@@ -619,9 +619,161 @@ tracks/0/keys = {
 "values": [68, 69, 70, 71, 72, 73]
 }
 
+[sub_resource type="Animation" id="Animation_dq4em"]
+resource_name = "carry_idle_east"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [128, 129]
+}
+
+[sub_resource type="Animation" id="Animation_nsnwb"]
+resource_name = "carry_idle_northeast"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [144, 145]
+}
+
+[sub_resource type="Animation" id="Animation_pvjap"]
+resource_name = "carry_idle_north"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [160, 161]
+}
+
+[sub_resource type="Animation" id="Animation_dhsn3"]
+resource_name = "carry_idle_northwest"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [176, 177]
+}
+
+[sub_resource type="Animation" id="Animation_okxsy"]
+resource_name = "carry_idle_west"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [192, 193]
+}
+
+[sub_resource type="Animation" id="Animation_ffuen"]
+resource_name = "carry_idle_southwest"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [208, 209]
+}
+
+[sub_resource type="Animation" id="Animation_xc3m2"]
+resource_name = "carry_idle_south"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [224, 225]
+}
+
+[sub_resource type="Animation" id="Animation_np41t"]
+resource_name = "carry_idle_southeast"
+length = 0.7
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [240, 241]
+}
+
 [resource]
 _data = {
 &"RESET": SubResource("Animation_yb34q"),
+&"carry_idle_east": SubResource("Animation_dq4em"),
+&"carry_idle_north": SubResource("Animation_pvjap"),
+&"carry_idle_northeast": SubResource("Animation_nsnwb"),
+&"carry_idle_northwest": SubResource("Animation_dhsn3"),
+&"carry_idle_south": SubResource("Animation_xc3m2"),
+&"carry_idle_southeast": SubResource("Animation_np41t"),
+&"carry_idle_southwest": SubResource("Animation_ffuen"),
+&"carry_idle_west": SubResource("Animation_okxsy"),
 &"idle_east": SubResource("Animation_28fgk"),
 &"idle_north": SubResource("Animation_tbkkw"),
 &"idle_northeast": SubResource("Animation_6781w"),

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=74 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" uid="uid://dc1qtf65gxja2" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" uid="uid://7crjwq1c14n1" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
@@ -19,7 +19,48 @@ height = 18.0
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_q5418"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dwwql"]
+animation = &"takuaAnimations2.res/carry_idle_south"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xeusc"]
+animation = &"takuaAnimations2.res/carry_idle_west"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kcwdb"]
+animation = &"takuaAnimations2.res/carry_idle_north"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jkaxi"]
+animation = &"takuaAnimations2.res/carry_idle_east"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x5h31"]
+animation = &"takuaAnimations2.res/carry_idle_southeast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aspgm"]
+animation = &"takuaAnimations2.res/carry_idle_northeast"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjjle"]
+animation = &"takuaAnimations2.res/carry_idle_southwest"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hq603"]
+animation = &"takuaAnimations2.res/carry_idle_northwest"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ba8hb"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_dwwql")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_xeusc")
+blend_point_1/pos = Vector2(-1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_kcwdb")
+blend_point_2/pos = Vector2(0, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_jkaxi")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_x5h31")
+blend_point_4/pos = Vector2(1, 1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_aspgm")
+blend_point_5/pos = Vector2(1, -1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_rjjle")
+blend_point_6/pos = Vector2(-1, 1)
+blend_point_7/node = SubResource("AnimationNodeAnimation_hq603")
+blend_point_7/pos = Vector2(-1, -1)
+blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xhfv4"]
 
@@ -218,7 +259,7 @@ states/throw/position = Vector2(305, -124)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_1521r")
 states/walk/position = Vector2(757, 84)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_44k1j"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_83y3c"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_l50k0"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_q5418"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_17w4t"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_7806k"), "throw", "idle", SubResource("AnimationNodeStateMachineTransition_dwwql"), "idle", "carry_idle", SubResource("AnimationNodeStateMachineTransition_xeusc"), "carry_idle", "throw", SubResource("AnimationNodeStateMachineTransition_kcwdb"), "carry_idle", "carry_walk", SubResource("AnimationNodeStateMachineTransition_jkaxi"), "carry_walk", "carry_idle", SubResource("AnimationNodeStateMachineTransition_x5h31"), "idle", "Death", SubResource("AnimationNodeStateMachineTransition_rjjle"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_hq603"), "idle", "dialogue_or_menu", SubResource("AnimationNodeStateMachineTransition_2dirf"), "dialogue_or_menu", "idle", SubResource("AnimationNodeStateMachineTransition_ix87q")]
-graph_offset = Vector2(-70, -168.889)
+graph_offset = Vector2(-50, -149.889)
 
 [sub_resource type="Animation" id="Animation_rxla1"]
 length = 0.001
@@ -295,10 +336,10 @@ frame = 96
 tree_root = SubResource("AnimationNodeStateMachine_ooatf")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Death/blend_position = Vector2(0, 0)
-parameters/carry_idle/blend_position = Vector2(0, 0)
+parameters/carry_idle/blend_position = Vector2(0.851198, 0.675516)
 parameters/carry_walk/blend_position = Vector2(0, 0)
 parameters/dialogue_or_menu/blend_position = Vector2(0, 0)
-parameters/idle/blend_position = Vector2(-0.671454, -0.628319)
+parameters/idle/blend_position = Vector2(0.805801, 0.522124)
 parameters/jump/blend_position = Vector2(0.00706708, 0.963303)
 parameters/throw/blend_position = Vector2(0, 0)
 parameters/walk/blend_position = Vector2(0.00179529, -0.0176991)
@@ -353,6 +394,7 @@ shape = SubResource("RectangleShape2D_awdgd")
 [connection signal="jumped" from="Player Input" to="Jump" method="_on_player_input_jumped"]
 [connection signal="jumped" from="Player Input" to="Carry" method="_on_player_input_jumped"]
 [connection signal="jumped" from="Jump" to="AnimationManager" method="_on_jump_jumped"]
+[connection signal="carried" from="Carry" to="AnimationManager" method="_on_carry_carried"]
 [connection signal="timeout" from="Carry/ItemCheckTick" to="Carry" method="_on_item_check_tick_timeout"]
 [connection signal="body_entered" from="ItemDetector" to="Carry" method="_on_item_detector_body_entered"]
 [connection signal="body_exited" from="ItemDetector" to="Carry" method="_on_item_detector_body_exited"]

@@ -9,6 +9,8 @@ extends Node
 @onready var idle_blend_position: String = "parameters/idle/blend_position"
 @onready var walk_blend_position: String = "parameters/walk/blend_position"
 @onready var jump_blend_position: String = "parameters/jump/blend_position"
+@onready var carry_idle_blend_position: String = "parameters/carry_idle/blend_position"
+
 
 var current_animation: String = "idle"
 var anim_from_state
@@ -33,6 +35,7 @@ func update_blend_spaces() -> void:
 	animation_tree.set(idle_blend_position, actor.direction)
 	animation_tree.set(walk_blend_position, actor.direction)
 	animation_tree.set(jump_blend_position, actor.direction)
+	animation_tree.set(carry_idle_blend_position, actor.direction)
 
 func get_current_animation():
 	return animation_state.get_current_node()
@@ -45,6 +48,10 @@ func _on_movement_idled() -> void:
 
 func _on_movement_walking() -> void:
 	animation_state.travel("walk")
+
+func _on_carry_carried() -> void:
+	animation_state.travel("carry_idle")
+
 
 func _on_test_timer_delete_timeout() -> void:
 	print(anim_from_state)

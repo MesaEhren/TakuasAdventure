@@ -1,6 +1,8 @@
 class_name Carry
 extends Node
 
+signal carried
+
 @export var player_body: CharacterBody2D
 var items_nearby = []
 var closest_item = null
@@ -13,6 +15,7 @@ func _on_player_input_interact() -> void:
 		if player_body.get_current_animation() == "idle" \
 		or player_body.get_current_animation() == "walk":
 			GlobalVariables.targeted_object.carried(player_body)
+			carried.emit()
 	
 
 func _on_player_input_jumped() -> void:
