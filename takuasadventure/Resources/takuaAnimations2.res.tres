@@ -171,6 +171,150 @@ tracks/0/keys = {
 "values": [192, 193]
 }
 
+[sub_resource type="Animation" id="Animation_ru2xc"]
+resource_name = "carry_walk_east"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [131, 132, 133, 134, 135, 136]
+}
+
+[sub_resource type="Animation" id="Animation_vn2bk"]
+resource_name = "carry_walk_north"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [163, 164, 165, 166, 167, 168]
+}
+
+[sub_resource type="Animation" id="Animation_l4l6w"]
+resource_name = "carry_walk_northeast"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [147, 148, 149, 150, 151, 152]
+}
+
+[sub_resource type="Animation" id="Animation_sth80"]
+resource_name = "carry_walk_northwest"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [179, 180, 181, 182, 183, 184]
+}
+
+[sub_resource type="Animation" id="Animation_pdr8i"]
+resource_name = "carry_walk_south"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [227, 228, 229, 230, 231, 232]
+}
+
+[sub_resource type="Animation" id="Animation_k03pi"]
+resource_name = "carry_walk_southeast"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [243, 244, 245, 246, 247, 248]
+}
+
+[sub_resource type="Animation" id="Animation_qa3mr"]
+resource_name = "carry_walk_southwest"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [211, 212, 213, 214, 215, 216]
+}
+
+[sub_resource type="Animation" id="Animation_pgd1s"]
+resource_name = "carry_walk_west"
+length = 0.75
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [195, 196, 197, 198, 199, 200]
+}
+
 [sub_resource type="Animation" id="Animation_28fgk"]
 resource_name = "idle_east"
 length = 2.4
@@ -619,6 +763,246 @@ tracks/2/keys = {
 "values": [510, 338, 510]
 }
 
+[sub_resource type="Animation" id="Animation_k2sbk"]
+resource_name = "throw_east"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
+"update": 1,
+"values": [138, 139, 140, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_3het4"]
+resource_name = "throw_north"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
+"update": 1,
+"values": [170, 171, 172, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_p42yg"]
+resource_name = "throw_northeast"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
+"update": 1,
+"values": [154, 155, 156, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_m21np"]
+resource_name = "throw_northwest"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
+"update": 1,
+"values": [186, 187, 188, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fvbvw"]
+resource_name = "throw_south"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1.03526),
+"update": 1,
+"values": [234, 235, 236]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_lhr7h"]
+resource_name = "throw_southeast"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1.03526),
+"update": 1,
+"values": [250, 251, 252]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6jyfp"]
+resource_name = "throw_southwest"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
+"update": 1,
+"values": [218, 219, 220, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vdoyo"]
+resource_name = "throw_west"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TakuaSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
+"update": 1,
+"values": [202, 203, 204, 2]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Carry")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"throw_from_animation"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_x6w4g"]
 resource_name = "walk_east"
 length = 0.75
@@ -761,390 +1145,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [68, 69, 70, 71, 72, 73]
-}
-
-[sub_resource type="Animation" id="Animation_ru2xc"]
-resource_name = "carry_walk_east"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [131, 132, 133, 134, 135, 136]
-}
-
-[sub_resource type="Animation" id="Animation_l4l6w"]
-resource_name = "carry_walk_northeast"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [147, 148, 149, 150, 151, 152]
-}
-
-[sub_resource type="Animation" id="Animation_vn2bk"]
-resource_name = "carry_walk_north"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [163, 164, 165, 166, 167, 168]
-}
-
-[sub_resource type="Animation" id="Animation_sth80"]
-resource_name = "carry_walk_northwest"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [179, 180, 181, 182, 183, 184]
-}
-
-[sub_resource type="Animation" id="Animation_pgd1s"]
-resource_name = "carry_walk_west"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [195, 196, 197, 198, 199, 200]
-}
-
-[sub_resource type="Animation" id="Animation_qa3mr"]
-resource_name = "carry_walk_southwest"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [211, 212, 213, 214, 215, 216]
-}
-
-[sub_resource type="Animation" id="Animation_pdr8i"]
-resource_name = "carry_walk_south"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [227, 228, 229, 230, 231, 232]
-}
-
-[sub_resource type="Animation" id="Animation_k03pi"]
-resource_name = "carry_walk_southeast"
-length = 0.75
-loop_mode = 1
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [243, 244, 245, 246, 247, 248]
-}
-
-[sub_resource type="Animation" id="Animation_k2sbk"]
-resource_name = "throw_east"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
-"update": 1,
-"values": [138, 139, 140, 2]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_p42yg"]
-resource_name = "throw_northeast"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
-"update": 1,
-"values": [154, 155, 156, 2]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_3het4"]
-resource_name = "throw_north"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
-"update": 1,
-"values": [170, 171, 172, 2]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_m21np"]
-resource_name = "throw_northwest"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
-"update": 1,
-"values": [186, 187, 188, 2]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_vdoyo"]
-resource_name = "throw_west"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
-"update": 1,
-"values": [202, 203, 204, 2]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_6jyfp"]
-resource_name = "throw_southwest"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1.03526, 1),
-"update": 1,
-"values": [218, 219, 220, 2]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_fvbvw"]
-resource_name = "throw_south"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1.03526),
-"update": 1,
-"values": [234, 235, 236]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_lhr7h"]
-resource_name = "throw_southeast"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TakuaSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1.03526),
-"update": 1,
-"values": [250, 251, 252]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Carry")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"throw_from_animation"
-}]
 }
 
 [resource]

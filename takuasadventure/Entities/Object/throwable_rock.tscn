@@ -589,7 +589,6 @@ texture = ExtResource("1_4a82s")
 
 [node name="Indicator" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1, -11.958)
 texture = ExtResource("4_3esps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

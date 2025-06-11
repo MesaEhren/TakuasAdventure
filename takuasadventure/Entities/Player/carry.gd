@@ -9,8 +9,10 @@ signal dropped_to_idle
 var items_nearby = []
 var closest_item = null
 
-func _process(delta: float) -> void:
-	print(items_nearby)
+var max_deviation: float = 0.05
+
+#func _process(delta: float) -> void:
+	#print(items_nearby)
 
 func _on_player_input_interact() -> void:
 	if GlobalVariables.carried_object != null:
@@ -25,7 +27,12 @@ func _on_player_input_interact() -> void:
 	
 
 func throw_from_animation(): #specifically to be called from any of the throw animations.
-	GlobalVariables.carried_object.throw(player_body.aim_direction)
+	var new_aim_dir = Vector2.ZERO
+	#randomize, very slightly the deviation of the angle of the throw to prevent objects from bunching up.
+	new_aim_dir.x = player_body.aim_direction.x + randf_range(-max_deviation, max_deviation)
+	new_aim_dir.y = player_body.aim_direction.y + randf_range(-max_deviation, max_deviation)
+	GlobalVariables.carried_object.throw(new_aim_dir)
+	print(new_aim_dir)
 
 func _on_player_input_jumped() -> void:
 	if GlobalVariables.carried_object != null and player_body.get_current_animation() != "throw":
