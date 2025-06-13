@@ -32,7 +32,7 @@ func throw_from_animation(): #specifically to be called from any of the throw an
 	new_aim_dir.x = player_body.aim_direction.x + randf_range(-max_deviation, max_deviation)
 	new_aim_dir.y = player_body.aim_direction.y + randf_range(-max_deviation, max_deviation)
 	GlobalVariables.carried_object.throw(new_aim_dir)
-	print(new_aim_dir)
+	#print(new_aim_dir)
 
 func _on_player_input_jumped() -> void:
 	if GlobalVariables.carried_object != null and player_body.get_current_animation() != "throw":

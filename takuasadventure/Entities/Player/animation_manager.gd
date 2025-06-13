@@ -22,20 +22,31 @@ func _process(_delta: float) -> void:
 	
 	match anim_from_state:
 		"idle":
-			pass
+			#This is an edge-case check. Sometimes the animation will not switch
+			#to carrying, but no other glitches occur.
+			if GlobalVariables.carried_object != null:
+				animation_state.travel("carry_idle")
 		"walk":
 			if actor.direction.length() > 0:
 				update_blend_spaces()
+			
+			#This is an edge-case check. Sometimes the animation will not switch
+			#to carrying, but no other glitches occur.
+			if GlobalVariables.carried_object != null:
+				animation_state.travel("carry_walk")
+				
 		"jump":
 			pass
 		"carry_walk":
 			if actor.direction.length() > 0:
 				update_blend_spaces()
 			
+			#Edge case check to return to non-carrying animations.
 			if GlobalVariables.carried_object == null:
-				animation_state.travel("idle")
+				animation_state.travel("walk")
 				
 		"carry_idle":
+			#Edge case check to return to non-carrying animations.
 			if GlobalVariables.carried_object == null:
 				animation_state.travel("idle")
 
