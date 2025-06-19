@@ -41,3 +41,15 @@ func _physics_process(_delta):
 			#idled.emit()
 	
 	actor.move_and_slide()
+
+
+func _on_last_position_tick_timeout() -> void:
+	#on every tick of this, update the where the last safe position of the player was. Only do this
+	#when the player is NOT jumping. Add checks later for additional invalid states.
+	if actor.get_current_animation() != "jump":
+		actor.last_safe_position = actor.global_position
+		print(actor.last_safe_position)
+	
+func landed_terrain_check():
+	if actor.terrain_below_player == "water":
+		actor.global_position = actor.last_safe_position

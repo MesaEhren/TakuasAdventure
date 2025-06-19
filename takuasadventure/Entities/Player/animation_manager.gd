@@ -85,6 +85,3 @@ func _on_carry_thrown() -> void:
 
 func _on_carry_dropped_to_idle() -> void:
 	animation_state.travel("idle")
-
-func _on_test_timer_delete_timeout() -> void:
-	print(anim_from_state)

@@ -24,6 +24,7 @@ var current_speed: int = 90 #TODO remove that 1
 var direction: Vector2
 var aim_direction: Vector2
 var terrain_below_player: String = "ground"
+var last_safe_position: Vector2
 
 func _physics_process(_delta: float) -> void:
 	GlobalVariables.player_position_reference = self.global_position
@@ -32,6 +33,7 @@ func _physics_process(_delta: float) -> void:
 		#var collision := get_slide_collision(index)
 		#var body := collision.get_collider()
 		#print("Collided with: ", body.name)
+	#print(terrain_below_player)
 
 func get_current_animation():
 	return animation_state.get_current_node()
