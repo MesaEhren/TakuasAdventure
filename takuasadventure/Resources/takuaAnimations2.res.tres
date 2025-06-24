@@ -487,7 +487,21 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 338, 510]
+"values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_4uygi"]
@@ -523,10 +537,24 @@ tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.966667),
+"times": PackedFloat32Array(0, 0.1667, 0.9667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_bx5x5"]
@@ -562,10 +590,24 @@ tracks/2/path = NodePath(".:collision_mask")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0333333, 0.166667, 0.966667),
+"times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [478, 338, 510]
+"values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_u4u37"]
@@ -604,7 +646,21 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 338, 510]
+"values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_pg2p2"]
@@ -643,7 +699,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 338, 510]
+"values": [494, 322, 494]
 }
 tracks/3/type = "method"
 tracks/3/imported = false
@@ -652,7 +708,7 @@ tracks/3/path = NodePath("Movement")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.8),
+"times": PackedFloat32Array(0.9),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -696,7 +752,21 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 338, 510]
+"values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_pijfo"]
@@ -735,7 +805,21 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 338, 510]
+"values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_dh128"]
@@ -774,7 +858,21 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.166667, 0.966667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [510, 338, 510]
+"values": [494, 322, 494]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Movement")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"landed_terrain_check"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_k2sbk"]

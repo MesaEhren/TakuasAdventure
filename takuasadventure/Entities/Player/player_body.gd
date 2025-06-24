@@ -28,6 +28,7 @@ var last_safe_position: Vector2
 
 func _physics_process(_delta: float) -> void:
 	GlobalVariables.player_position_reference = self.global_position
+	#print("collision_mask:", collision_mask)
 	
 	#for index in get_slide_collision_count():
 		#var collision := get_slide_collision(index)
@@ -37,3 +38,6 @@ func _physics_process(_delta: float) -> void:
 
 func get_current_animation():
 	return animation_state.get_current_node()
+	
+func testprint():
+	print("collision_mask:", collision_mask)
