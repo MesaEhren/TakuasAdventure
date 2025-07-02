@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://3yn6vr1s6iuh"]
+[gd_scene load_steps=93 format=3 uid="uid://3yn6vr1s6iuh"]
 
 [ext_resource type="Script" uid="uid://dc1qtf65gxja2" path="res://Components/Movement.gd" id="1_5hh5d"]
 [ext_resource type="Script" uid="uid://7crjwq1c14n1" path="res://Entities/Player/player_body.gd" id="1_j1j4q"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://o3f8e4055x62" path="res://Entities/Player/item_detector.gd" id="11_awdgd"]
 [ext_resource type="Script" uid="uid://by7xlk38jn845" path="res://Entities/Player/terrain_detector.gd" id="12_q5418"]
 [ext_resource type="AnimationLibrary" uid="uid://ceo5epruduygd" path="res://Resources/FXAnimations.res" id="13_17w4t"]
+[ext_resource type="PackedScene" uid="uid://d1mterj5y3ith" path="res://Entities/Player/UI.tscn" id="14_iqw2p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rd0eh"]
 radius = 9.0
@@ -478,6 +479,12 @@ player = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TerrainDetector"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_awdgd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("14_iqw2p")]
 
 [connection signal="carry_idled" from="Movement" to="AnimationManager" method="_on_movement_carry_idled"]
 [connection signal="carry_walking" from="Movement" to="AnimationManager" method="_on_movement_carry_walking"]
