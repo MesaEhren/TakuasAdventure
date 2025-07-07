@@ -492,15 +492,17 @@ visible = false
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
-[node name="Control" parent="CanvasLayer" instance=ExtResource("14_iqw2p")]
+[node name="Control" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("14_iqw2p")]
+player = NodePath("../..")
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." groups=["hurtbox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color(0.823035, 0.000133611, 0.695092, 1)
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_iqw2p")
 
+[connection signal="health_changed" from="." to="CanvasLayer/Control" method="_on_player_body_health_changed"]
 [connection signal="carry_idled" from="Movement" to="AnimationManager" method="_on_movement_carry_idled"]
 [connection signal="carry_walking" from="Movement" to="AnimationManager" method="_on_movement_carry_walking"]
 [connection signal="idled" from="Movement" to="AnimationManager" method="_on_movement_idled"]

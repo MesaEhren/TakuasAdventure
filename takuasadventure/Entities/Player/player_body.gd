@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var max_health: int = 5
 @onready var health: int = 5
 
+signal health_changed(new_value)
 
 #TODO: add animation player, blendspace strings, etc, and create the update function
 var idle_blend_position: String = "parameters/Idle/blend_position"
@@ -48,3 +49,9 @@ func get_current_animation():
 	
 func testprint():
 	print("collision_mask:", collision_mask)
+
+func recieve_damage_simple():
+	if health > 0:
+		health -= 1
+		$FXAnimations.play("blink")
+		health_changed.emit(health)

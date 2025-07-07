@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://dwccu2g5pxbrs"]
+[gd_scene load_steps=12 format=4 uid="uid://dwccu2g5pxbrs"]
 
 [ext_resource type="TileSet" uid="uid://c4f2xpkvwljdq" path="res://Resources/Beach Tileset 1.tres" id="1_x37th"]
+[ext_resource type="Script" uid="uid://bjuxvxuek5ymk" path="res://Maps/Test Maps/spikes.gd" id="2_7cyk1"]
 [ext_resource type="PackedScene" uid="uid://3yn6vr1s6iuh" path="res://Entities/Player/player_body.tscn" id="2_ahouf"]
 [ext_resource type="PackedScene" uid="uid://chnxji21h7k5r" path="res://Entities/Object/throwable_rock.tscn" id="3_j4quu"]
+[ext_resource type="Texture2D" uid="uid://bfmxvd3k1gvrw" path="res://Assets/Sprites/Objects/Environment/spikes_floor.png" id="4_7xsgv"]
+[ext_resource type="PackedScene" uid="uid://dcanmpl6x8ocq" path="res://Entities/Enemies/blue_beetle.tscn" id="6_emyq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xsgv"]
 size = Vector2(39.5, 50)
@@ -15,6 +18,9 @@ size = Vector2(544, 143)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4quu"]
 size = Vector2(100, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emyq6"]
+size = Vector2(27, 24)
 
 [node name="Node2D" type="Node2D"]
 
@@ -58,6 +64,18 @@ shape = SubResource("RectangleShape2D_ahouf")
 position = Vector2(-208, 31)
 shape = SubResource("RectangleShape2D_j4quu")
 
+[node name="Spikes" type="Area2D" parent="."]
+position = Vector2(301, 121)
+script = ExtResource("2_7cyk1")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Spikes"]
+texture = ExtResource("4_7xsgv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_emyq6")
+
 [node name="PlayerBody" parent="." instance=ExtResource("2_ahouf")]
 position = Vector2(37, 41)
 
@@ -71,3 +89,8 @@ polygon = PackedVector2Array(27, 123, 39, 99, 55, 105, 77, 104, 77, 86, 60, 82, 
 
 [node name="ThrowableRock" parent="." instance=ExtResource("3_j4quu")]
 position = Vector2(-75, 37)
+
+[node name="BlueBeetle" parent="." instance=ExtResource("6_emyq6")]
+position = Vector2(300, 38)
+
+[connection signal="area_entered" from="Spikes" to="Spikes" method="_on_area_entered"]
