@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TakuasAdventure"
-run/main_scene="res://Maps/Test Maps/first movement test.tscn"
+run/main_scene="uid://dwccu2g5pxbrs"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

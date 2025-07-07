@@ -3,6 +3,10 @@ extends CharacterBody2D
 #central component, serve as message bus, status holder, and ultimate 
 #source-of-truth for the character.
 
+@onready var max_health: int = 5
+@onready var health: int = 5
+
+
 #TODO: add animation player, blendspace strings, etc, and create the update function
 var idle_blend_position: String = "parameters/Idle/blend_position"
 var walk_blend_position: String = "parameters/Walk/blend_position"
@@ -25,6 +29,9 @@ var direction: Vector2
 var aim_direction: Vector2
 var terrain_below_player: String = "ground"
 var last_safe_position: Vector2
+
+func _ready() -> void:
+	$CanvasLayer.visible = true
 
 func _physics_process(_delta: float) -> void:
 	GlobalVariables.player_position_reference = self.global_position
