@@ -611,6 +611,7 @@ wait_time = 0.05
 autostart = true
 
 [node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("throwable_object")]
+position = Vector2(0, -18)
 monitoring = false
 script = ExtResource("5_m2hk0")
 throwable_object = NodePath("..")

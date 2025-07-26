@@ -50,6 +50,14 @@ func get_current_animation():
 func testprint():
 	print("collision_mask:", collision_mask)
 
+func on_hurtbox_hit(hitting_object):
+	#quick check to prevent your own throwables from doing damage to you
+	#probably needs to get fixed
+	if hitting_object.is_in_group("throwable"):
+		pass
+	else:
+		recieve_damage_simple()
+		
 func recieve_damage_simple():
 	if health > 0:
 		health -= 1

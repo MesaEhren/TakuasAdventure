@@ -58,4 +58,4 @@ func get_current_animation():
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("hurtbox"):
-		area.get_parent().on_hurtbox_hit()
+		area.get_parent().on_hurtbox_hit(self)
