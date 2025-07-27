@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcanmpl6x8ocq"]
+[gd_scene load_steps=27 format=3 uid="uid://dcanmpl6x8ocq"]
 
 [ext_resource type="Texture2D" uid="uid://guu4t8rwpo1a" path="res://Assets/Sprites/Rahi/Blue_Beetle_Spritesheet.png" id="1_g8ef1"]
 [ext_resource type="Script" uid="uid://xgpno61fcpqx" path="res://Entities/Enemies/blue_beetle.gd" id="1_w4ifi"]
@@ -310,8 +310,47 @@ _data = {
 &"walk_twr": SubResource("Animation_xxkmb")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w4ifi"]
+animation = &"BlueBeetle/idle_awr"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_brfjn"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_524nc"]
+animation = &"BlueBeetle/idle_awl"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ebij1"]
+animation = &"BlueBeetle/idle_twl"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xxkmb"]
+animation = &"BlueBeetle/idle_twr"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_pfxlg"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_w4ifi")
+blend_point_0/pos = Vector2(1, -1)
+blend_point_1/node = SubResource("AnimationNodeBlendTree_brfjn")
+blend_point_1/pos = Vector2(0, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_524nc")
+blend_point_2/pos = Vector2(-1, -1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ebij1")
+blend_point_3/pos = Vector2(-1, 1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_xxkmb")
+blend_point_4/pos = Vector2(1, 1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w4ifi"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_htwgm"]
+states/Start/position = Vector2(198, 100)
+states/idle/node = SubResource("AnimationNodeBlendSpace2D_pfxlg")
+states/idle/position = Vector2(325, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_w4ifi")]
+
 [node name="BlueBeetle" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 111
 script = ExtResource("1_w4ifi")
+search_radius = 60.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -329,3 +368,14 @@ libraries = {
 }
 
 [node name="Effects" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_htwgm")
+anim_player = NodePath("../Animations")
+parameters/idle/blend_position = Vector2(-0.878476, -0.856502)
+
+[node name="PatrolTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="PatrolTimer" to="." method="_on_patrol_timer_timeout"]
